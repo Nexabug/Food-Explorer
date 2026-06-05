@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-card: #334155;
+
+  --color-text: #f8fafc;
+  --color-text-light: #cbd5e1;
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --color-border: #475569;
+
+  /* Font Sizes */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.5rem; /* 24px */
+  --fs-xl: 2rem; /* 32px */
+  --fs-xxl: 3rem; /* 48px */
+
+  /* Spacing */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-2xl: 2rem; /* 32px */
+  --space-3xl: 3rem; /* 48px */
+  --space-4xl: 4rem; /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.25);
+
+  /* Layout */
+  --navbar-height: 70px;
+  --container-width: 1200px;
+
+  /* Sidebar */
+  --sidebar-width: 450px;
+
+  /* Inputs & Buttons */
+  --input-height: 48px;
+  --button-height: 48px;
+
+  /* Breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1280px;
+}
+.body {
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url("/ella-olsson-mmnKI8kMxpc-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.home {
+  display: flex;
+  backdrop-filter: blur(var(--radius-lg));
+  min-height: 100vh;
+  background: rgba(31, 18, 1, 0.429);
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+}
+.hero-content h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.hero-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero-texts em {
+  color: #f59e0b;
+  text-decoration: underline wavy;
+  line-height: 1.2;
+}
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-img img {
+  width: min(90%, var(--mobile));
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.413);
+}
+.btns {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.btn {
+  padding: 16px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  letter-spacing: 1px;
+}
+.sec-btn {
+  background: transparent;
+  outline: 2px solid;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.438);
+}
+
+.sec-btn:hover {
+  box-shadow: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    padding: 40px 16px;
+  }
+
+  .hero-content {
+    gap: 28px;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content h3 {
+    font-size: var(--fs-base);
+    line-height: 1.6;
+  }
+
+  .btns {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-img {
+    width: 100%;
+  }
+
+  .hero-img img {
+    width: min(100%, 420px);
+  }
+}
