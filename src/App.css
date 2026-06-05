@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   padding-left: 80px;
 }
@@ -136,7 +136,7 @@
   border: none;
   border-radius: 50px;
   font-size: 16px;
-  background-color: var(--color-bg);
+  background-color: #f59e0b;
   color: var(--color-text);
   cursor: pointer;
   transition: all 0.3s ease-in;
@@ -149,13 +149,18 @@
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.438);
+  box-shadow: 0 0 30px rgba(255, 174, 0, 0.438);
 }
 
+.btn:active {
+  transform: translateY(-1px);
+}
 .sec-btn:hover {
-  box-shadow: 0 0 20px;
+  box-shadow: 0 0 30px;
 }
-
+.sec-btn:active {
+  transform: translateY(-1px);
+}
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
@@ -166,6 +171,7 @@
     gap: 28px;
     padding: 0;
     justify-content: flex-start;
+    align-items: center;
   }
 
   .hero-content h1 {
@@ -180,6 +186,8 @@
   .btns {
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-img {
