@@ -68,7 +68,7 @@
   --laptop: 1024px;
   --desktop: 1280px;
 }
-.body {
+body {
   min-height: 100vh;
   margin: 0 auto;
   background-image: url("/ella-olsson-mmnKI8kMxpc-unsplash.jpg");
@@ -77,11 +77,18 @@
   background-position: center;
   color: white;
 }
+.h {
+  background: rgba(31, 18, 1, 0.429);
+  backdrop-filter: blur(var(--radius-lg));
+}
+
+.body {
+  min-height: 100vh;
+  max-width: 90%;
+  margin: 0 auto;
+}
 .home {
   display: flex;
-  backdrop-filter: blur(var(--radius-lg));
-  min-height: 100vh;
-  background: rgba(31, 18, 1, 0.429);
 }
 
 .hero-content {
@@ -91,7 +98,6 @@
   align-items: flex-start;
   gap: 50px;
   justify-content: center;
-  padding-left: 80px;
 }
 
 .hero-content h1 {
@@ -197,4 +203,54 @@
   .hero-img img {
     width: min(100%, 420px);
   }
+}
+
+/* nav bar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navlinks button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: medium;
+  background-color: transparent;
+  outline: 2px solid var(--color-text);
+  color: var(--color-text);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+.navlinks .login-btn {
+  background-color: #f59e0b;
+  outline: none;
+}
+
+.navlinks button:hover {
+  box-shadow: 0 0 30px rgba(255, 174, 0, 0.438);
+  background-color: #f59e0b;
+  outline: none;
+}
+
+.navlinks .login-btn:hover {
+  box-shadow: 0 0 30px rgba(255, 174, 0, 0.438);
+  background-color: transparent;
+  outline: 2px solid var(--color-text);
 }

@@ -1,10 +1,14 @@
 import Home from "./pages/homepage/Home";
 import "./App.css";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="body">
-      <Home />
+    <div className="h">
+      <div className="body">
+        <Nav />
+        <Home />
+      </div>
     </div>
   );
 }
