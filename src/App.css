@@ -295,3 +295,71 @@ body {
 .content::selection {
   color: #f59e0b;
 }
+
+/* login page */
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  position: relative;
+  width: min(100%, 568px);
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #0f172a4a;
+  overflow: hidden;
+}
+
+.login-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(6px);
+  background: url("/public/eaters-collective-12eHC6FxPyg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+  align-items: center;
+}
+
+.login-box input {
+  border: none;
+  font-size: 22px;
+  padding: 15px 20px;
+  border-radius: 99px;
+  outline: 2px solid rgba(255, 255, 255, 0.532);
+  color: #ffffff;
+  background-color: #f59f0b3f;
+}
+.login-box input::placeholder {
+  color: white;
+}
+.login-box div {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  text-transform: capitalize;
+  gap: 10px;
+}
+.login-box span {
+  color: #f59e0b;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-family: cursive;
+  font-size: 18px;
+  transition: all 0.3s ease-out;
+}
