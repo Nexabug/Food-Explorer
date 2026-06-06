@@ -254,3 +254,44 @@ body {
   background-color: transparent;
   outline: 2px solid var(--color-text);
 }
+
+/* about page */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  padding-bottom: 20px;
+}
+
+.about div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #f59e0b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.content {
+  width: min(90%, 900px);
+  padding: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+}
+
+.content::selection {
+  color: #f59e0b;
+}
