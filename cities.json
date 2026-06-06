@@ -1,0 +1,25 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "city": "Tokyo",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "position": [35.6762, 139.6503]
+    },
+    {
+      "id": 2,
+      "city": "Mumbai",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "position": [19.076, 72.8777]
+    },
+    {
+      "id": 3,
+      "city": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "position": [48.8566, 2.3522]
+    }
+  ]
+}

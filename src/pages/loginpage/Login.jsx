@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -21,7 +22,9 @@ function Login() {
           />
         </div>
         <div>
-          <button className="btn">Login</button>
+          <Link to="/app">
+            <button className="btn">Login</button>
+          </Link>
         </div>
       </div>
     </div>
