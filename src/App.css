@@ -86,6 +86,7 @@ body {
   inset: 0;
   position: absolute;
   backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.308);
 }
 
 .body {
@@ -236,9 +237,7 @@ body {
   backdrop-filter: blur(2px);
 }
 .logo {
-  width: 80px;
-  height: 75px;
-  border-radius: 50%;
+  width: 100px;
 }
 
 .navlinks {
@@ -390,4 +389,30 @@ body {
   font-family: cursive;
   font-size: 18px;
   transition: all 0.3s ease-out;
+}
+
+/* not found */
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.notfoundimg {
+  width: 500px;
+}
+
+.notfound .heading {
+  font-size: 40px;
+  color: #cbd5e1;
+}
+.notfound em {
+  color: #f59e0b;
+  text-decoration: underline wavy;
+  line-height: 1.2;
+}
+.notfound .content {
+  text-align: center;
+  width: auto;
 }

@@ -5,6 +5,7 @@ import Login from "./pages/loginpage/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import AppLayout from "./layout/AppLayout";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="about" element={<About />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
 
         <Route path="/app" element={<AppLayout />} />
