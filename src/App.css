@@ -86,6 +86,9 @@ body {
   min-height: 100vh;
   max-width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .home {
   display: flex;
@@ -211,6 +214,14 @@ body {
   justify-content: space-between;
   padding: 20px;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.377);
+  border-left: 1px solid rgba(255, 255, 255, 0.342);
+  border-right: 1px solid rgba(255, 255, 255, 0.345);
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
 }
 .logo {
   width: 80px;
@@ -302,6 +313,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .login-box {
