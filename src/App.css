@@ -386,17 +386,38 @@ body {
 
 /* Sidebar Layout */
 .sidebar {
+  position: relative;
   flex: 1;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  background: #1e293b;
   gap: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.185)),
+    url("/ChatGPT Image Jun 6, 2026, 02_07_19 PM.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.358);
 }
 
+.sidebar > * {
+  position: relative;
+  z-index: 1;
+}
 .map {
   flex: 1;
+  
 }
 
 /* City & Country Specific Modules */
@@ -408,7 +429,7 @@ body {
 }
 
 .toggle-data-div {
-  background-color: #334155;
+  background-color: #ffffff9a;
   min-width: 400px;
   border-radius: 20px;
   padding: 20px;
@@ -417,10 +438,13 @@ body {
   gap: 10px;
   min-height: min(50vh, auto);
   overflow: auto;
+  backdrop-filter: blur(12px);
+  outline: 1px solid #f59f0b51;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.194);
 }
 
 .city-item {
-  background-color: #00000056;
+  background-color: #000000ac;
   border-radius: 20px;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -428,6 +452,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.242);
 }
 
 .city-item:hover {
@@ -456,7 +481,7 @@ body {
   width: fit-content;
   display: flex;
   gap: 20px;
-  background-color: #0f172a;
+  background-color: #000000b0;
   padding: 10px;
   border-radius: 12px;
   align-self: center;
@@ -487,10 +512,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #334155;
+  background-color: #000000c6;
   width: 100%;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(8px);
 }
 
 .sidebar footer p {
@@ -571,6 +597,12 @@ body {
   border-top: 5px solid #f59e0b;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+/* leaflet map */
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
 }
 
 /* ==========================================================================
