@@ -1,9 +1,10 @@
 import React from "react";
 import Country from "./Country";
 import Loader from "../ui/Loader";
+import NoDataYet from "./NoDataYet";
 
 function CountryList({ cities, isloading }) {
-  if (cities.length === 0) return <p>no country till now</p>;
+  if (cities.length === 0) return <NoDataYet />;
   return (
     <div className="toggle-data-div">
       {isloading ? (
