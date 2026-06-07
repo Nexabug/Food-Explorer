@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <div className="home">
@@ -15,8 +17,8 @@ function Home() {
         </div>
 
         <div className="btns">
-          <button className="btn">Start Exploring</button>
-          <button className="btn sec-btn">More Info</button>
+          <Link to="/app" className="btn">Start Exploring</Link>
+          <Link to="/about" className="btn sec-btn">More Info</Link>
         </div>
       </div>
       <div className="hero-img">

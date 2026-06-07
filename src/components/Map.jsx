@@ -1,27 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useMapEvents } from "react-leaflet";
 import { CircleMarker } from "react-leaflet";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Map() {
+  const navigate = useNavigate();
   const [marker, setmarker] = useState([]);
   const [position, setpos] = useState([50, 14]);
 
   return (
-    <div className="map">
+    <div className="map" onClick={() => navigate("form")}>
       <MapContainer
         center={position}
         zoom={13}
         scrollWheelZoom={true}
         keyboard={true}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <HandleClickMap setpos={setpos} setmarker={setmarker} />
-
+        <CircleMarker center={position} radius={20} color="red" />
         {marker.map((x) => (
           <CustomMarker x={x} key={x[0]} />
         ))}

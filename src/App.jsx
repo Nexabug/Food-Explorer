@@ -2,13 +2,15 @@ import Home from "./pages/homepage/Home";
 import "./App.css";
 import About from "./pages/aboutpage/About";
 import Login from "./pages/loginpage/Login";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import AppLayout from "./layout/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
 import { useEffect, useState } from "react";
+import Detail from "./components/Detail";
+import Form from "./components/Form";
 
 function App() {
   const [cities, setcities] = useState([]);
@@ -41,14 +43,20 @@ function App() {
         </Route>
 
         <Route path="/app" element={<AppLayout />}>
+          <Route index element={<Navigate replace to="cities" />} />
           <Route
             path="cities"
             element={<CityList cities={cities} isloading={isloading} />}
           />
           <Route
+            path="cities/:id"
+            element={<Detail cities={cities} isloading={isloading} />}
+          />
+          <Route
             path="country"
             element={<CountryList cities={cities} isloading={isloading} />}
           />
+          <Route path="form" element={<Form />} />
         </Route>
       </Routes>
     </BrowserRouter>

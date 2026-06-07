@@ -21,11 +21,10 @@ function Login() {
             defaultValue={"jackass"}
           />
         </div>
-        <div>
-          <Link to="/app">
-            <button className="btn">Login</button>
-          </Link>
-        </div>
+
+        <Link to="/app">
+          <button className="btn">Login</button>
+        </Link>
       </div>
     </div>
   );

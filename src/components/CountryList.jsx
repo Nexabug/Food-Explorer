@@ -3,6 +3,7 @@ import Country from "./Country";
 import Loader from "../ui/Loader";
 
 function CountryList({ cities, isloading }) {
+  if (cities.length === 0) return <p>no country till now</p>;
   return (
     <div className="toggle-data-div">
       {isloading ? (

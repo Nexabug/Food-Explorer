@@ -1,19 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function City({ city }) {
+function City({ cities }) {
+  const { id, city, country, emoji, position } = cities;
+      
   return (
-    <div className="city-item">
-      <div className="city-info">
-        <p className="cityname">{city.city}</p>
-        <p className="countryname">{city.country}</p>
-        <p className="flag">{city.emoji}</p>
-      </div>
+    <Link to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
+      <div className="city-item">
+        <div className="city-info">
+          <p className="cityname">{city}</p>
+          <p className="countryname">{country}</p>
+          <p className="flag">{emoji}</p>
+        </div>
 
-      <div>
-        <p>{city.position.at(0)}</p>
-        <p> {city.position.at(1)}</p>
+        <div>
+          <p>{position.lat}</p>
+          <p>{position.lng}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

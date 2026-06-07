@@ -230,6 +230,8 @@ body {
 }
 
 .btn {
+  text-align: center;
+  text-decoration: none;
   padding: 16px 20px;
   min-width: 140px;
   border: none;
@@ -417,7 +419,6 @@ body {
 }
 .map {
   flex: 1;
-  
 }
 
 /* City & Country Specific Modules */
@@ -436,13 +437,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-height: min(50vh, auto);
+  height: min(100%, 500px);
   overflow: auto;
   backdrop-filter: blur(12px);
   outline: 1px solid #f59f0b51;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.194);
 }
-
+.toggle-data-div a {
+  text-decoration: none;
+}
 .city-item {
   background-color: #000000ac;
   border-radius: 20px;
@@ -650,6 +653,20 @@ body {
   .hero-content {
     gap: 22px;
   }
+  .app {
+    flex-direction: column;
+  }
+  .leaflet-container {
+    width: 100%;
+    height: 50vh;
+  }
+  .sidebar footer {
+    display: none;
+  }
+  .sidebar {
+    gap: 0;
+    min-height: 100vh;
+  }
 }
 
 @media (max-width: 680px) {
@@ -666,7 +683,7 @@ body {
 @media (max-width: 560px) {
   .nav {
     flex-direction: column;
-    gap: 20px;
+    padding-bottom: 15px;
   }
 }
 
