@@ -22,12 +22,15 @@ const initialState = {
   city: "",
 };
 
-const initialStateCity = [];
-
 function CityReducer(state, action) {
   switch (action.type) {
     case "addCity":
       return [...state, action.payload];
+    case "deletecity":
+      const newstate = state.filter((item) => item.id !== action.payload);
+      return newstate;
+    case "removeAll":
+      return [];
     default:
       return state;
   }
@@ -56,8 +59,16 @@ function reducer(state, action) {
         id: Date.now(),
       };
     default:
-      state;
+      return state;
   }
+}
+function initCityList() {
+  const storedData = localStorage.getItem("city");
+
+  if (!storedData || storedData === "undefined" || storedData === "null") {
+    return [];
+  }
+  return JSON.parse(storedData);
 }
 export const Context = createContext();
 
@@ -65,8 +76,13 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [cityListState, dispatchCity] = useReducer(
     CityReducer,
-    initialStateCity,
+    [],
+    initCityList,
   );
+
+  useEffect(() => {
+    localStorage.setItem("city", JSON.stringify(cityListState));
+  }, [cityListState]);
 
   return (
     <Context.Provider

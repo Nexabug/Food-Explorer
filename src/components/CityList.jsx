@@ -6,7 +6,11 @@ import NoDataYet from "./NoDataYet";
 import { Context } from "../App";
 
 function CityList() {
-  const { cityListState } = useContext(Context);
+  const { cityListState, dispatchCity } = useContext(Context);
+  function handleDelete() {
+    dispatchCity({ type: "removeAll" });
+  }
+
   if (cityListState.length === 0) return <NoDataYet />;
 
   return (
@@ -14,6 +18,9 @@ function CityList() {
       {cityListState.map((city) => (
         <City cityListState={city} key={city.id} />
       ))}
+      <button onClick={handleDelete} className="remove">
+        Remove All
+      </button>
     </div>
   );
 }

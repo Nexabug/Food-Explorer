@@ -758,6 +758,28 @@ body {
     width: 100%;
   }
 }
+
+/* remove btn */
+.remove {
+  padding: 10px 20px;
+  background-color: red;
+  border: none;
+  border-radius: 500px;
+  color: white;
+  font-size: 19px;
+  align-self: center;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+
+.remove:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.244);
+}
+
+.delete {
+  width: 30px;
+}
 /* ==========================================================================
    9. ANIMATION KEYFRAMES
    ========================================================================== */

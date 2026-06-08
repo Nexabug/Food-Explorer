@@ -62,7 +62,6 @@ export default function Map() {
 function HandleClickMap({ setpos, handleClick }) {
   const map = useMapEvents({
     click(e) {
-      // e.stopPropagation();
       setpos(e.latlng);
       map.flyTo(e.latlng, 11);
 

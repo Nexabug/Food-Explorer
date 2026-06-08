@@ -35,13 +35,33 @@ function Form() {
     <div className="form">
       <form onSubmit={(e) => e.preventDefault()}>
         <p>name</p>
-        <input type="text" onChange={handleName} value={state.name} />
+        <input
+          type="text"
+          onChange={handleName}
+          value={state.name}
+          required={true}
+        />
         <p>date</p>
-        <input type="date" onChange={handleDate} value={state.date} />
+        <input
+          type="date"
+          onChange={handleDate}
+          value={state.date}
+          required={true}
+        />
         <p>time</p>
-        <input type="time" onChange={handleTime} value={state.time} />
+        <input
+          type="time"
+          onChange={handleTime}
+          value={state.time}
+          required={true}
+        />
         <p>notes</p>
-        <input type="text" onChange={handleNotes} value={state.notes} />
+        <input
+          type="text"
+          onChange={handleNotes}
+          value={state.notes}
+          required={true}
+        />
         <div className="form-btn">
           <button onClick={handleAdd} className="btn">
             Add btn
