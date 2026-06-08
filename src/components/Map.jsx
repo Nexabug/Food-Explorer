@@ -9,18 +9,41 @@ import {
   CircleMarker,
 } from "react-leaflet";
 
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 import { Context } from "../App";
 
 export default function Map() {
   const navigate = useNavigate();
   const { dispatch } = useContext(Context);
-
+  const [cur, setcur] = useState(0);
+  const images = [
+    "/USER.jpeg",
+    "/user02.jpeg",
+    "/user03.jpeg",
+    "/user04.jpeg",
+    "/user05.jpeg",
+    "/user06.jpeg",
+    "/user07.jpeg",
+    "/user08.jpeg",
+    "/user09.jpeg",
+    "/user10.jpeg",
+    "/user11.jpeg",
+    "/user12.jpeg",
+    "/user13.jpeg",
+    "/user14.jpeg",
+  ];
   const [position, setpos] = useState({ lat: 24, lng: 84 });
 
   const API_KEY = "932665331cfd434a8514cd1c2fd1cf5a";
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setcur((prev) => (prev + 1) % images.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [cur]);
   function handleClick(newPos) {
     const API_URL = `https://api.geoapify.com/v1/geocode/reverse?lat=${newPos.lat}&lon=${newPos.lng}&apiKey=${API_KEY}`;
 
@@ -39,8 +62,36 @@ export default function Map() {
     dispatch({ type: "position", payload: newPos });
   }
 
+  function handlLogout() {
+    dispatch({ type: "reset" });
+  }
+
+  function handleGeo() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+
+          handleClick({ lat: lat, lng: lng });
+          setpos({ lat, lng });
+        },
+        (err) => {
+          console.log(err.message);
+        },
+      );
+    } else {
+      return;
+    }
+  }
   return (
     <div className="map">
+      <div className="user">
+        <img src={images[cur]} alt="user photo" className="user-pfp" />
+        <Link to="/login" onClick={handlLogout} className="logout-btn">
+          LogOut
+        </Link>
+      </div>
       <MapContainer
         center={position}
         zoom={13}
@@ -55,6 +106,12 @@ export default function Map() {
         <CustomMarker position={position} />
         <ChangeCenter />
       </MapContainer>
+
+      <div className="geoloc">
+        <button className="geo-btn btn" onClick={handleGeo}>
+          Use My Current Loctaion
+        </button>
+      </div>
     </div>
   );
 }

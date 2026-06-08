@@ -419,6 +419,7 @@ body {
 }
 .map {
   flex: 1;
+  position: relative;
 }
 
 /* City & Country Specific Modules */
@@ -780,6 +781,61 @@ body {
 .delete {
   width: 30px;
 }
+
+/* user */
+
+.user {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: #00000081;
+  padding: 10px;
+  border-radius: 12px;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-pfp {
+  border-radius: 50%;
+  width: 70px;
+}
+.logout-btn {
+  text-align: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: medium;
+  background-color: #f59e0b;
+  color: var(--color-text);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+/* geo loc */
+
+.geoloc {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+.geo-btn {
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #34c40d;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /* ==========================================================================
    9. ANIMATION KEYFRAMES
    ========================================================================== */
