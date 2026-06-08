@@ -4,13 +4,13 @@ function NoDataYet() {
   return (
     <div className="no-data">
       <img
-        src="/ChatGPT_Image_Jun_7__2026__04_55_51_PM__1_-removebg-preview.png"
+        src="/no-data-illustration.png"
         alt="No food is there"
         className="no-data-img"
       />
       <h1>Lets! Explore Food!</h1>
       <div>
-        <img src="/food-restaurant-svgrepo-com.svg" width={20} />
+        <img src="/icon-restaurant.svg" width={20} />
       </div>
       <p>Please selct any city or contry to start the list (: ❤️</p>
       <div className="svgs">

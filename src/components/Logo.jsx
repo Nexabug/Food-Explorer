@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link to="/">
       <img
-        src="/ChatGPT_Image_Jun_6__2026__01_46_07_PM-removebg-preview.png"
+        src="/logo-app.png"
         alt="Logo"
         className="logo"
       />

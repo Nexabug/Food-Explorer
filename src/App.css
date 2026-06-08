@@ -81,7 +81,7 @@ body {
 
 .h {
   position: relative;
-  background-image: url("/ella-olsson-mmnKI8kMxpc-unsplash.jpg");
+  background-image: url("/hero-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -339,7 +339,7 @@ body {
   inset: 0;
   z-index: -1;
   filter: blur(6px);
-  background: url("/eaters-collective-12eHC6FxPyg-unsplash.jpg");
+  background: url("/login-background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -404,7 +404,7 @@ body {
   inset: 0;
   background:
     linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.185)),
-    url("/ChatGPT Image Jun 6, 2026, 02_07_19 PM.png");
+    url("/sidebar-background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

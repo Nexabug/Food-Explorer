@@ -7,7 +7,7 @@ function PageNotFound() {
     <div className="notfound">
       <Logo />
       <img
-        src="/pagenotfound-img-removebg-preview.png"
+        src="/404-illustration.png"
         alt="404 not found"
         className="notfoundimg"
       />
