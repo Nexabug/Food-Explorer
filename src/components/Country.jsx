@@ -1,10 +1,10 @@
 import React from "react";
 
-function Country({ city }) {
+function Country({ cityListState }) {
   return (
     <div className="city-item">
-      <p>{city.country}</p>
-      <p>{city.emoji}</p>
+      <p>{cityListState.country}</p>
+      <p>{cityListState.time}</p>
     </div>
   );
 }

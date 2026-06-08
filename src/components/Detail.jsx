@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-
+import { Context } from "../App";
 function Detail() {
   const { id } = useParams();
-  const [posPrams, setPosPrams] = useSearchParams();
   const navigate = useNavigate();
+  const { cityListState } = useContext(Context);
 
-  const lat = Number(posPrams.get("lat"));
-  const lng = Number(posPrams.get("lng"));
+  const state = cityListState.find((item) => String(item.id) === String(id));
+
   return (
-    <>
-      <div>Detail of: {id}</div>
-      <div>lat: {lat}</div>
-      <div>lng: {lng}</div>
-
-      <button onClick={() => setPosPrams({ lat: 50, lng: 14 })}>
-        change position
+    <div className="toggle-data-div detail">
+      <p>
+        <strong>Name:</strong> {state.name}
+      </p>
+      <p>
+        <strong>Date:</strong> {state.date}
+      </p>
+      <p>
+        <strong>Time:</strong> {state.time}
+      </p>
+      <p>
+        <strong>Country:</strong> {state.country}
+      </p>
+      <p>
+        <strong>City:</strong> {state.city}
+      </p>
+      <p>
+        <strong>Notes:</strong> {state.notes}
+      </p>
+      <a href={`https://en.wikipedia.org/wiki/${state.city}`} target="blank">
+        Wikipedia---(:
+      </a>
+      <button className="btn" onClick={() => navigate(-1)}>
+        back btn
       </button>
-      <button onClick={() => navigate(-1)}>back btn</button>
-    </>
+    </div>
   );
 }
 

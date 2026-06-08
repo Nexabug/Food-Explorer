@@ -1,17 +1,17 @@
-import React from "react";
 import Country from "./Country";
 import Loader from "../ui/Loader";
 import NoDataYet from "./NoDataYet";
+import { Context } from "../App";
+import { useContext } from "react";
 
-function CountryList({ cities, isloading }) {
-  if (cities.length === 0) return <NoDataYet />;
+function CountryList() {
+  const { cityListState } = useContext(Context);
+  if (cityListState.length === 0) return <NoDataYet />;
   return (
     <div className="toggle-data-div">
-      {isloading ? (
-        <Loader />
-      ) : (
-        cities.map((city) => <Country city={city} key={city.id} />)
-      )}
+      {cityListState.map((city) => (
+        <Country cityListState={city} key={city.id} />
+      ))}
     </div>
   );
 }
